@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# 서준·미래 리서치 디지털 명함
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+모바일과 데스크톱 어디에서나 보기 좋은 디지털 명함 웹페이지입니다.  
+브랜드 컬러(#601AA3)를 중심으로 글래스모피즘 스타일을 적용했고, 다크 모드와 라이트 모드를 자유롭게 전환할 수 있습니다.  
+전화, 연락처 저장, 회사 소개, 소셜 미디어 링크 등을 한눈에 확인할 수 있어 링크트리처럼 활용하기 좋습니다.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 한눈에 보기
 
-### `npm start`
+- **브랜드 톤 유지**: 전체 테마, 선택 영역, 버튼 등에 브랜드 컬러를 사용했습니다.
+- **글래스모피즘 디자인**: 투명한 카드와 빛 번짐 효과로 세련된 분위기를 연출합니다.
+- **모바일 우선 설계**: 스마트폰 화면에서 보기 편하도록 설계하고 데스크톱에선 여백이 넉넉하게 보입니다.
+- **다크/라이트 모드 토글**: 오른쪽 상단 버튼으로 즉시 전환할 수 있습니다.
+- **링크트리 구성**: 전화, vCard 저장, 회사 사이트, 인스타그램, 유튜브 등 주요 링크를 버튼으로 제공합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 미리 보기
 
-### `npm test`
+개발 서버를 실행하고 브라우저에서 확인할 수 있습니다. (아래 “화면 보기” 참고)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 화면 보기
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. 이 폴더에서 터미널을 열고 `npm install`을 입력합니다. 처음 한 번만 실행하면 됩니다.  
+2. 설치가 끝나면 `npm start`를 입력합니다.  
+3. 브라우저가 자동으로 열리거나, 주소창에 `http://localhost:3000`을 입력하면 명함 페이지를 확인할 수 있습니다.  
+4. 작업을 멈추려면 터미널에서 `Ctrl + C`를 눌러 서버를 종료합니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 내용 바꾸기
 
-### `npm run eject`
+모든 텍스트와 링크는 `src/App.js`에 모여 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **기본 정보**: 이름, 회사, 전화번호 등은 파일 상단 `profile` 객체에서 수정합니다.
+- **링크 버튼**: 전화/연락처 저장/회사 소개 버튼은 `links` 배열에서 주소를 바꾸면 됩니다.
+- **소셜 미디어**: 인스타그램, 유튜브, 텔레그램, 이메일은 `socialLinks` 배열에서 수정합니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+이미지는 `public` 폴더에 있습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `public/profile-photo.png` → 프로필 사진  
+- `public/MIRAE.svg` → 회사 로고/아이콘  
+이미지를 교체할 때는 같은 파일명으로 저장하면 자동으로 반영됩니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 배포(공유)하기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. `npm run build`를 입력하면 `build` 폴더가 생성됩니다.  
+2. 이 폴더를 웹 호스팅 서비스(Netlify, Vercel, GitHub Pages 등)에 올리면 누구나 접속할 수 있습니다.  
+3. 공유용 주소를 만들 계획이라면, `public/index.html`의 메타 태그에 있는 `og:url`을 원하는 도메인으로 채워 주세요.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 자주 묻는 질문
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **색상을 더 바꾸고 싶어요.**  
+  `src/App.css` 파일의 `:root` 부분에서 색상 값을 원하는 색으로 바꿔 보세요.
 
-### Analyzing the Bundle Size
+- **폰트가 다르게 보일 수 있나요?**  
+  장치나 운영체제에 따라 약간 다르게 표시될 수 있습니다. 특별한 폰트를 쓰고 싶다면 웹폰트를 추가해야 합니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **불러온 이미지가 안 보여요.**  
+  파일명이 정확한지, `public` 폴더 안에 있는지, 그리고 대·소문자를 올바르게 작성했는지 확인해 주세요.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 도움이 필요하면
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+간단한 수정이라면 위 설명만으로 바로 변경할 수 있습니다. 그래도 어려운 부분이 있다면, 바꾸고 싶은 내용을 정리해 개발자에게 전달해 주세요.  
+“어떤 텍스트를 어떤 문구로 바꾸고 싶은지”, “어떤 링크를 새 주소로 바꾸고 싶은지”처럼 구체적으로 알려주시면 더 빠르게 도와드릴 수 있습니다.
